@@ -18,22 +18,17 @@ sudo git clone https://github.com/ChrisTracy/tailscaleTools /var/tailscaleTools
 chmod +x /var/tailscaleTools/scripts/tailCheck.sh
 ```
 
-3. Create the log directory
-```bash
-mkdir /var/log/tailscaleTools
-```
-
-4. Copy the configd action file (this is what calls the script and makes it show up in the GUI)
+3. Copy the configd action file (this is what calls the script and makes it show up in the GUI)
 ```bash
 cp /var/tailscaleTools/config/actions_tailcheck.conf /usr/local/opnsense/service/conf/actions.d
 ```
 
-5. Restart the configd service
+4. Restart the configd service
 ```bash
 service configd restart
 ```
 
-6. Open the opensense GUI and navigate to **System>Settings>Cron**.
+5. Open the opensense GUI and navigate to **System>Settings>Cron**.
    - Create a new cron job like the one below (mine is set to run every 15 minutes, adjust as needed).
    - CHANGE THE PARAMETER FIELD TO A TAILNET IP THAT IS ALWAYS ONLINE IN YOUR TAILNET.
    - Click **Save**
@@ -41,7 +36,7 @@ service configd restart
 
 ![cron_job_config](assets/opnsense_tailscale_cron.png)
 
-7. Wait 1 minute and check the log. You should see a "ping successful" or "Ping failed, restarting Tailscale service..." message.
+6. Wait 1 minute and check the log. You should see a "ping successful" or "Ping failed, restarting Tailscale service..." message.
 ```bash
 cat /var/log/tailscaleTools/tailCheck.log
 ```
