@@ -36,7 +36,7 @@ service configd restart
 
 ![cron_job_config](assets/opnsense_tailscale_cron.png)
 
-6. Wait 1 minute and check the log. You should see a "ping successful" or "Ping failed, restarting Tailscale service..." message.
+6. Wait until the next 15 minute mark on the hour (00,15,30,45) and check the log. You should see a "ping successful" or "Ping failed, restarting Tailscale service..." message.
 ```bash
 cat /var/log/tailscaleTools/tailCheck.log
 ```
