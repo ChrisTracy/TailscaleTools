@@ -1,7 +1,13 @@
 #!/bin/sh
 
+# Log directory path
+LOG_DIR="/var/log/tailscaleTools"
+
+# Ensure the log directory exists
+mkdir -p $LOG_DIR
+
 # Path to the log file
-LOG_FILE="/var/log/tailscaleTools/tailCheck.log"
+LOG_FILE="$LOG_DIR/tailCheck.log"
 
 # Log the received IP address for debugging
 echo "Received IP address: $1" >> $LOG_FILE
