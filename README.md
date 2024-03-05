@@ -10,7 +10,7 @@ Security is paramount, especially when modifications involve your firewall. I st
 
 1. Clone the repo
 ```bash
-sudo git clone https://github.com/ChrisTracy/tailscaleTools /var/tailscaleTools
+git clone https://github.com/ChrisTracy/tailscaleTools /var/tailscaleTools
 ```
 
 2. Make the script executable
